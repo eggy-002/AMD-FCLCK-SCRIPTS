@@ -7,6 +7,12 @@ UPPSCRIPT=amd_fclock_update.sh
 HIVELINE="Applying AMD OC"
 HIVEUPDATE="\\\t\techo2 \"> Applying F state clk\"\n\t\tbash ${SCRIPTDEST}/${UPPSCRIPT}"
 
+echo "Installing Python3"
+apt-get install libgtk-3-dev build-essential python3 python3-pip -y -q
+
+echo "Install UPP"
+yes | pip3 install upp
+
 echo "Installing script at $SCRIPTDEST"
 
 if [ ! -d $SCRIPTDEST ]; then
